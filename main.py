@@ -14,11 +14,11 @@ def find_mismatch(text):
     for i, next in enumerate(text):
         if next in "([{":
            
-            opening_bracket_stack.append(Bracket(next, i))
+            opening_brackets_stack.append(Bracket(next, i))
     
         if next in ")]}":
                                          
-            if not opening_bracket_stack:
+            if not opening_brackets_stack:
                 return i + 1 
             top = opening_brackets_stack.pop()
             if not are_matching(top.char, next):
