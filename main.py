@@ -21,13 +21,13 @@ def find_mismatch(text):
             if not opening_bracket_stack:
                 return i + 1 
             top = opening_brackets_stack.pop()
-        if not are_matching(top.char, next):
+            if not are_matching(top.char, next):
 
              return i + 1
 
 
     if opening_brackets_stack:
-             return opening_brackets_stack[0].position + 1
+         return opening_brackets_stack[0].position + 1
 
     return "Success"
             
