@@ -5,7 +5,8 @@ Bracket = namedtuple("Bracket", ["char", "position"])
 
 
 def are_matching(left, right):
-    return (left + right) in ["()", "[]", "{}"]
+matching = {"(": ")", "[": "]", "{": "}"}
+    return matching.get(left) == right
 
 
 def find_mismatch(text):
